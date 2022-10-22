@@ -1,0 +1,461 @@
+<!DOCYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<title>Lab1Web</title>
+
+
+
+
+	<style>
+ body {
+		background-color:#000000;
+}
+
+/* --------------------------Checkboxes-------------------------- */
+	.checkboxes {
+	display: inline-block;
+	margin: 5px 150px 0 0;
+	user-select: none;
+	position: relative;
+	
+}
+.checkboxes input[type=checkbox] {
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+}
+.checkboxes span {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 10px;
+	line-height: 30px;
+	border: 1px solid #2f2f2f;
+	border-radius: 20px;
+	transition: background 0.2s ease;
+}
+
+/* Checked */
+.checkboxes input[type=checkbox]:checked + span {
+	background: #2f2f2f;
+}
+
+/* Unhecked */
+.checkboxes input[type=checkbox]:not(:checked) + span {
+	background: #1b1b1b;
+}
+
+/* Disabled */
+.checkboxes input[type=checkbox]:disabled + span {
+	background: #efefef;
+	color: #2f2f2f;
+	cursor: default;
+}
+
+.checkboxes input[type=checkbox]:checked:disabled + span {
+	background: #f7efdc;
+}
+
+/* Hover */
+.checkboxes input[type=checkbox]:hover + span {
+	background: #2f2f2f;
+}
+ 
+
+.cbtcolor {
+color: #ffffff;
+font-size: small;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.sendForm {
+	display: inline-block;
+	cursor: pointer;
+	padding: 0px 10px;
+	line-height: 30px;
+	border: 1px solid #2f2f2f;
+	background: #1b1b1b;
+	border-radius: 20px;
+	transition: background 0.2s ease;
+	color: #ffffff;
+	font-size: small;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.sendForm:hover {
+	background: #2f2f2f;
+}
+
+.R-checkbox {
+	margin-left: 100px;
+}
+.sendForm:disabled {opacity: 0;
+			pointer-events: none;
+}
+/* --------------------------Checkboxes-------------------------- */
+/* --------------------------header-------------------------- */
+header {
+  min-width: 1000px;
+	word-spacing:0cm;
+	text-align: center;
+	margin: 0;
+}
+
+.headText{
+	color: #C6C6C6;
+    text-transform: uppercase;
+    padding: 5px 24px;
+    font-size: 11px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: normal;
+    box-sizing: border-box;
+		background: #000000;
+		border: 0px;
+		border-radius: 0%;
+}
+
+.headText:hover{
+	background-color: #2f2f2f;
+	color: #ffffff;
+}
+/* --------------------------header-------------------------- */
+.row1 {
+	background-color: #1b1b1b;
+	margin: 0px;
+	max-width: 100%;
+        height: auto;
+        overflow:hidden
+}
+
+.logo {
+	margin-top: 3px;
+	margin-left: 100px;
+	float:left;
+        width: 150px;
+}
+
+.valueX {
+	margin-top: 14px;
+	float:left;
+        width: 150px;
+				font-size:14pt;
+}
+
+.lupaX {
+	margin-top: 0px;
+	outline: none;
+	border: none;
+    color: #fff;
+    background-color: #252525;
+		border-radius: 2px;
+}
+.lupa {
+	margin-top: 2px;
+	float:left;
+}
+
+.textX {
+	margin: 0px;
+	outline: none;
+	border: none;
+    color: #fff;
+    background-color: #252525;
+		border-radius: 2px;
+}
+.valueY {
+	float:left;
+        width: 33%
+}
+
+
+
+/* --------------------------dropdown-------------------------- */
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 12px; /* demo only */
+}
+
+.custom-dropdown select {
+  cursor:pointer;
+	outline: none;
+  background-color: #252525;
+  color: #fff;
+  font-size: 10px;
+  padding: .5em;
+  padding-right: 2.5em;	
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
+}
+
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-dropdown select[disabled] {
+  color: #252525;
+}
+
+.custom-dropdown select[disabled]::after {
+  color: #252525;
+}
+
+.custom-dropdown::before {
+  background-color: #252525;
+}
+
+.custom-dropdown::after {
+  color: #252525;
+}
+/* --------------------------dropdown-------------------------- */
+.paramY{
+	background-color: #252525;
+	border-radius: 3px;
+}
+
+.lableY {
+	margin-left: 4px;
+	color:#7c7c7c;
+	font-size: 12px;
+}
+
+.goalImage{
+	border-radius: 20px;
+	border-color: #2f2f2f;
+}
+
+.goal{
+	text-align: center;
+}
+
+.txt {
+	font-size: 15px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter
+}
+
+.txt:hover {
+	font-size: 15px;
+	color: #ff6600;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter
+}
+
+
+a {
+	text-decoration: none;
+	font-size: 15px;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter
+}
+
+
+a:link {
+	font-size: 15px;
+	color: #ff6600;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:lighter
+}
+
+a:hover {
+	color: #ff6600;
+}
+
+table {
+overflow-x: auto;
+margin:auto;
+font-family:Arial, Helvetica, sans-serif;
+font-weight: bold;
+text-align: left;
+border-collapse: separate;
+border-spacing: 5px;
+background: #000000;
+color: #000000;
+border: 16px solid #000000;
+border-radius: 20px;
+
+}
+th {
+font-size: 18px;
+padding: 10px;
+
+}
+td {
+background: #ff6600;
+padding: 10px;
+border-radius: 16px;
+}
+
+.resultbody {
+	bottom: 0;
+      right: 0;
+      top: 400px;
+	position: absolute;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.resultbody::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.resultbody {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+	</style>
+
+
+
+
+	
+</head>
+<body>
+	<header>
+		<button class="headText">Komlev</button>
+		<button class="headText">Igor</button>
+		<button class="headText">Vladimirovich</button>
+		<button class="headText">P32111</button>
+		 <button class="headText">V-1309</button>
+	</header>
+	<main>
+		<div>
+			<form id="input">
+				<div class="row1">
+					<div class="logo">
+						<img width="125" height="40" src="img/nick.png">
+					</div>
+					<div class = "valueX">
+						<div class="lupaX">
+							<div class="lupa">
+								<img width="14" height="14" src="img/lupa.png">
+							</div>
+							<input class="textX" type="text" name="X" id = "X-value" size="13" maxlength="20" placeholder="Enter X (-5<X<3)" autocomplete="off"/>
+						</div>
+					</div>
+					<div class = "valueY">
+						<span class="custom-dropdown">
+						<!-- <label class="name" for="Y">choose Y: </label> -->
+							<div class="paramY">
+								<label class="lableY">Choose Y:</label>
+								<select name="Y" id="Y-value">
+
+								<option value="-5">-5</option>
+								<option value="-4">-4</option>
+								<option value="-3">-3</option>
+								<option value="-2">-2</option>
+								<option value="-1">-1</option>
+								<option value="0">0</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+
+								</select>
+							</div>
+						</span>
+					</div>
+				</div>
+				
+				<div class = "R-checkbox">
+					<!-- <input class="invisible" id="R-value" name="R" type="text" value="" pattern="([1-3]|[1-2]\.5)" required title="Only one checkbox must be selected"> -->
+					<div class="submitButtonAndR">
+						<label class = checkboxes>
+							<input id="myCheckbox" type="checkbox" name="R" id = "R1" value="1" onClick="ckChange(this)">
+							<span class = "cbtcolor">R = 1</span>
+						</label>
+
+						<label class = checkboxes>
+							<input id="myCheckbox" type="checkbox" name="R" id = "R2" value="1.5" onClick="ckChange(this)">
+							<span class = "cbtcolor">R = 1.5</span>
+						</label>
+
+						<label class = checkboxes>
+							<input id="myCheckbox" type="checkbox" name="R" id = "R3" value="2" onClick="ckChange(this)">
+							<span class = "cbtcolor">R = 2</span>
+						</label>
+
+						<label class = checkboxes>
+							<input id="myCheckbox" type="checkbox" name="R" id = "R4" value="2.5" onClick="ckChange(this)">
+							<span class = "cbtcolor">R = 2.5</span>
+						</label>
+						
+						<label class = checkboxes>
+							<input id="myCheckbox" type="checkbox" name="R" id = "R5" value="3" onClick="ckChange(this)">
+										<span class = "cbtcolor">R = 3</span>
+						</label> 
+
+						<label class = checkboxes>
+							<button class="sendForm" id="send" type="submit" disabled>Check!</button>
+						</label> 
+					</div>
+				</div> 
+				<!-- <div class="submitButtonAndR">
+					<button class="sendForm" id="send" type="submit" disabled>Check!</button>
+				</div> -->
+			</form>
+			<div class = "goal">
+				<img class="goalImg" src="img/goal.png" alt id="image">
+			</div>
+			<div class="goal">
+				<span class="txt"><a href="https://t.me/guganchik"> Can you get inside?</a></span>
+			</div>
+			
+			<div class="resultbody" id="outputContainer">
+				<table border="1" class="resultTable"> 
+						<tr>
+							<td class="cellNum">№</td>
+							<td class="cellNum">X</td>
+							<td class="cellNum">Y</td>
+							<td class="cellNum">R</td>
+							<td class="cellRes">Result</td>
+							<td class="cellTime">Working time</td>
+							<td class="cellTime">Current time</td>
+						</tr>
+			</div>
+		</div>
+	</main>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src = "js/main.js"></script>
+	<script src = "js/Rvalidate.js"></script>
+</body>
+<html>
+
